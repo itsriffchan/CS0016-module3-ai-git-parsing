@@ -129,7 +129,7 @@ I am completing an authorized classroom Python lab.
 
 ## Controlled merge-conflict line
 
-Validation status: AI reviewed
+Validation status: Tests passed
 
 ## Final reflection
 
