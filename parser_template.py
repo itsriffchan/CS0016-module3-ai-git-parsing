@@ -42,7 +42,7 @@ def parse_json(path: str | Path) -> dict:
     return {
         "site": data["site"],
         "device_count": len(devices),
-        "enabled_devices": sum(device["enabled"] for device in devices),
+        "enabled_devices": [device["hostname"] for device in devices if device['enabled']],
         "roles": [device["role"] for device in devices],
     }
 
