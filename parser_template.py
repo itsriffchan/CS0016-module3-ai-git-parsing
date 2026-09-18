@@ -33,8 +33,8 @@ def parse_xml(path: str | Path) -> dict:
 
 def parse_json(path: str | Path) -> dict:
     """Return site, device_count, enabled_devices, and roles from the JSON."""
-    # TODO: use json.load and derive the requested summary values.
-    raise NotImplementedError("Complete parse_json")
+    # TODO: use json.load and derive the requested summary values.
+    raise NotImplementedError("Complete parse_json")
 
 
 def parse_yaml(path: str | Path) -> dict:
