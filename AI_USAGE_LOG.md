@@ -97,12 +97,35 @@ I am completing an authorized classroom Python lab.
 ## Entry 3 - YAML parsing and integration
 
 **Prompt:**
+```
+I am completing an authorized classroom Python lab.
+ Review this function stub and the supplied fictional [XML/JSON/YAML] structure.
+ Recommend an implementation that returns exactly the keys described in the docstring.
+ Explain namespace handling, data types, error risks, and each library function used.
+ Do not invent files, credentials, network calls, or expected test results.
+ I will validate your recommendation using unit tests and Git diffs.
+ 
+ Function stub: 
+  def parse_yaml(path: str | Path) -> dict:
+      """Return name, approved, duration_minutes, devices, and action from YAML."""
+      # TODO: use yaml.safe_load and return the normalized maintenance summary.
+      raise NotImplementedError("Complete parse_yaml")
+ Relevant fictional data: 
+  window:
+    name: Saturday-Lab
+    approved: true
+    duration_minutes: 90
+  devices:
+    - R1
+    - SW1
+  action: validate-configuration
+```
 
-**AI recommendation summary:**
+**AI recommendation summary:** The AI recommended `safe_load` to parse the data into ordinary Python datatypes, allowing the structure to become nested dictionaries that can be indexed using keys.
 
-**Decision:** accepted / modified / rejected
+**Decision:** accepted
 
-**Validation evidence:**
+**Validation evidence:** The recommendation aligns with what is suggested in the document (using `yaml.safe_load`) and correctly retrieves the variables needed according to the docstring.
 
 ## Controlled merge-conflict line
 
