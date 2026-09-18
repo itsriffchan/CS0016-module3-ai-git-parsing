@@ -132,5 +132,8 @@ I am completing an authorized classroom Python lab.
 Validation status: Tests passed
 
 ## Final reflection
+> Describe one AI suggestion that you changed or rejected and explain the evidence that guided your decision.
 
-Describe one AI suggestion that you changed or rejected and explain the evidence that guided your decision.
+In the code for JSON parser, the `enabled_devices` was initially assumed to return a numerical sum of all enabled devices found in the JSON. However, when running the test file, it found that the result did not match what was expected. To resolve this, that variable needed to use a list comprehension, parsing the devices' hostnames (`R1`,`SW1`) rather than the total number of enabled devices.
+
+While I had not caught the error initially, I was still able to correct the code according to what is expected. This merely proves that having a test file is extremely crucial when handling with any type of code, whether it be AI-assisted or not, as they can catch errors that humans might glosss over. This exercise has also taught me to be more critical and truly understand the structure of the code or files I am dealing with.
