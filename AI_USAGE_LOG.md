@@ -1,7 +1,9 @@
 # AI Usage and Validation Log
 
 Student name: Reese Lauren C. Chan
+
 Section: TS31
+
 AI tool used: ChatGPT
 
 ## Entry 1 - XML parsing
@@ -47,13 +49,50 @@ I am completing an authorized classroom Python lab.
 
 ## Entry 2 - JSON parsing
 
-**Prompt:**
+```
+I am completing an authorized classroom Python lab.
+ Review this function stub and the supplied fictional [XML/JSON/YAML] structure.
+ Recommend an implementation that returns exactly the keys described in the docstring.
+ Explain namespace handling, data types, error risks, and each library function used.
+ Do not invent files, credentials, network calls, or expected test results.
+ I will validate your recommendation using unit tests and Git diffs.
+ 
+ Function stub: 
+  def parse_json(path: str | Path) -> dict:
+      """Return site, device_count, enabled_devices, and roles from the JSON."""
+      # TODO: use json.load and derive the requested summary values.
+      raise NotImplementedError("Complete parse_json")
 
-**AI recommendation summary:**
+ Relevant fictional data: 
+  {
+    "site": "FEU-Tech-Lab",
+    "devices": [
+      {
+        "hostname": "R1",
+        "management_ip": "192.0.2.10",
+        "role": "router",
+        "enabled": true
+      },
+      {
+        "hostname": "SW1",
+        "management_ip": "192.0.2.20",
+        "role": "switch",
+        "enabled": true
+      },
+      {
+        "hostname": "AP1",
+        "management_ip": "192.0.2.30",
+        "role": "wireless-ap",
+        "enabled": false
+      }
+    ]
+  }
+ ```
+**AI recommendation summary:** The AI recommended opening and loading the JSON file in read mode, then extracting the required values using their respective keys.
 
-**Decision:** accepted / modified / rejected
+**Decision:** Accepted. 
 
-**Validation evidence:**
+**Validation evidence:** The solution aligns with what the docstring requires and stores the necessary values in an appropriate data type (int, list, etc.)
 
 ## Entry 3 - YAML parsing and integration
 
