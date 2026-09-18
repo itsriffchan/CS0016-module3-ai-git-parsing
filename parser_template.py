@@ -14,14 +14,27 @@ import yaml
 
 def parse_xml(path: str | Path) -> dict:
     """Return default_operation and test_option from the NETCONF-style XML."""
-    # TODO: parse the XML, handle its default namespace, and return two strings.
-    raise NotImplementedError("Complete parse_xml")
+    tree = ET.parse(path)
+    root = tree.getroot()
+
+    ns = {"nc": "urn:ietf:params:xml:ns:netconf:base:1.0"}
+
+    default_operation = root.find(".//nc:default-operation", ns)
+    test_option = root.find(".//nc:test-option", ns)
+
+    if default_operation is None or test_option is None:
+        raise ValueError("Required NETCONF XML elements are missing")
+
+    return {
+        "default_operation": default_operation.text,
+        "test_option": test_option.text,
+    }
 
 
 def parse_json(path: str | Path) -> dict:
     """Return site, device_count, enabled_devices, and roles from the JSON."""
-    # TODO: use json.load and derive the requested summary values.
-    raise NotImplementedError("Complete parse_json")
+    # TODO: use json.load and derive the requested summary values.
+    raise NotImplementedError("Complete parse_json")
 
 
 def parse_yaml(path: str | Path) -> dict:
